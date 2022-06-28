@@ -6,7 +6,7 @@ import com.assessment.sales.processing.constants.ApplicationConstants;
 import com.assessment.sales.processing.constants.ErrorCodeMapping;
 import com.assessment.sales.processing.exception.SalesNotificationException;
 import com.assessment.sales.processing.model.SalesNotificationMessage;
-import com.assessment.sales.processing.repository.SalesNotificationRepository;
+import com.assessment.sales.processing.service.SalesNotificationProcessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class SalesMsgConsumer {
 
 
     @Autowired
-    private SalesNotificationRepository salesNotificationService;
+    private SalesNotificationProcessService salesNotificationService;
 
     @KafkaListener(topics = ApplicationConstants.TOPIC_NAME, groupId = ApplicationConstants.GROUP_ID)
     public void receiveNotification(String salesMsg){
