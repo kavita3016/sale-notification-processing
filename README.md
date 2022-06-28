@@ -19,7 +19,7 @@ This is a basic spring boot application which processes Sales notification messa
 
   Spring Boot 2.7.1  
   Spring Kafka  
-  Core Java 1.8
+  Core Java 11
 
 ## Installation
 
